@@ -1,0 +1,29 @@
+<html >
+	<head>
+		<script src="javascript/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="javascript/database.js" type="text/javascript" charset="utf-8"></script>
+		<title>Database Test</title>
+	</head>
+	<body>
+		<span style="margin-left:40%;"id="message"></span><br/>
+
+		<input type="button" onclick="criaTabela()" value="Criar Tabela"/>
+		<input type="button" onclick="dropaTabela()" value="Excluir tabela"/><br/>
+		Pasta padrao dos videos: <input id="rootPath" type="text" onKeyUp="salvaRootPath(this);"/> <br/><br/><br/><br/>
+		
+		
+		<div style="float:right;">
+			Nome do video: <input id="nomeBusca" type='search' placeholder='nomeParaBusca' autofocus /> <br/>
+			<input type="button" onclick="buscaVideoPorNome()" value="Buscar video"/> 		
+			<input type="button" onclick="buscaVideos()" value="Listar todos os Videos"/>
+			
+		</div>
+		<div>
+	  	Arquivo de video: <input id="path" type="file"/> <br/>
+			Nome Para o Video: <input id="nome" type="text" placeholder='Nome do video'/><br/>
+			<input type="button" onclick="adicionaVideo()" value="Adicionar v&iacute;deo"/> 		
+		</div>
+		<div id="videos"></div>
+
+	</body>
+</html>

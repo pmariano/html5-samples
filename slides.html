@@ -1,0 +1,452 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Slides</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" charset="utf-8"/>
+		<script type="text/javascript" src="javascript/jquery.js"></script>
+		<script type="text/javascript" src="javascript/game1.js"></script>
+		<script type="text/javascript" src="javascript/game2.js"></script>
+		<script src="http://www.google.com/jsapi?key=ABQIAAAAciAr-YcJOX4sVbBQF5yFOBRI2zyDwyJhdEdO9xa_t4eLz9AjchSe2DA_dgZ-3Akmxq1pd4ElyBEStA"></script>	
+		<script type="text/javascript">
+			google.load("maps", "2");
+			$(document).ready(function(){
+				google.setOnLoadCallback(initialize);
+			}); 
+
+			function initialize() {
+				var map = new google.maps.Map2(document.getElementById("map"));
+				map.setCenter(new google.maps.LatLng(37.4419, -122.1419), 13);
+			}
+
+			function setPos(){
+				var map = new google.maps.Map2(document.getElementById("map"));
+
+			navigator.geolocation.getCurrentPosition(function(position) {
+				var lat = position.coords.latitude;
+				var lng = position.coords.longitude;
+				map.setCenter(new GLatLng(lat, lng), 13);
+				map.addOverlay(new GMarker(new GLatLng(lat, lng)));    
+			});
+		}
+		
+		
+		</script>	
+  </head>
+  <body>
+    <div class="presentation">
+      <div class="slides">
+        <div class="slide">
+          <section class="center intro">
+            <hgroup>
+              <h1>
+                HTML5 
+              </h1>
+              <h2>Guia da Galáxia Malandra Marota</h2>
+              <h2>
+                Por Anderson Leite, Caires Vinicius e Pedro Mariano
+              </h2>
+            </hgroup>
+          </section>
+          <div class="notes">Caireakjfkldajs</div>
+          
+        </div>
+
+
+        <div class="slide">
+          <section class="center intro">
+            <hgroup>
+              <h1>Motiva&ccedil;&atilde;o kd</h1>
+              <br/><br/>
+              <h2><img src="images/coolface.png" width="100px" height="100px"/></h2>
+            </hgroup>
+          </section>
+        </div>
+
+        <div class="slide">
+          <header>Motiva&ccedil;&atilde;o:</header>
+          <section class="center">
+            <ul class="bullets">
+              <li>Canvas</li>
+              <li>Vídeo</li>
+              <li>Áudio</li>
+              <li>JS API</li>
+              <li>Semantic Inputs</li>
+            </ul>
+          </section>
+        </div>
+      
+        <div class="slide">
+          <section class="center intro">
+            <h1>Modernizr</h1>
+            <h2>Pseudo Vitória</h2>
+          </section>
+        </div>
+<!-- Iniciando Audio-->
+			<div class="slide">
+        <section class="center">
+          <h1>Áudio</h1><br/><br/>
+					<div class="js">
+						&lt;audio src="audio/sulfer.mp3" controls/&gt;
+					</div><br/><br/>
+					<audio src="audio/sulfer.mp3" controls>
+        </section>
+      </div>
+<!-- Iniciando Video-->
+			<div class="slide">
+       <section class="center">
+         <h1>Vídeo</h1><br/><br/>
+				<table style="text-align:center; padding-left: 35%;">
+					<thead>
+						<tr>
+							<th>VIDEO|</th>
+							<th>Flash|</th>
+							<th>H.264|</th>
+							<th>Ogg Theora</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Firefox 3.6</td>
+							<td>No</td>
+							<td>No</td>
+							<td>Yes</td>
+						</tr>
+						<tr>
+							<td>Safari 4.0</td>
+							<td>Yes</td>
+							<td>Yes</td>
+							<td>No</td>
+						</tr>
+						<tr>
+							<td>Chrome 4.0</td>
+							<td>No</td>
+							<td>Yes</td>
+							<td>Yes</td>
+						</tr>
+						<tr>
+							<td>Other (Flash)</td>
+							<td>Yes</td>
+							<td>Yes</td>
+							<td>No</td>
+						</tr>
+					</tbody>
+				</table>
+      	</section>
+     </div>
+		<!-- Segundo Slide Video-->
+		<div class="slide">
+			  <section>
+					<header>V&iacute;deo</header>
+					<pre>
+	&lt;video  controls style="-webkit-box-reflect:below 1px"&gt;
+		&lt;source src="videos/teste.ogv"/&gt;
+		&lt;source src="videos/teste.flv"/&gt;
+	&lt;/video&gt;
+					</pre>
+					<div >
+						<p>OGV e FLV</p>
+						<video controls style="-webkit-box-reflect:below 1px;">
+							<source src="videos/teste.ogv"/>
+							<source src="videos/teste.flv"/>
+						</video>
+					</div>
+		   </section>
+		</div>
+		<!-- Slide Database-->
+		<div class="slide">
+			<header>Database</header>
+			<section class="center">
+				<ul class="bullets">
+					<li>Web SQL Database (SQlite 3.6.19)</li>
+					<li>Web Storage(local storage)</li>
+					<li>Application Cache API</li>
+				</ul>
+			</section>
+		</div>
+		<!-- Geolocation-->
+		<div class="slide">
+			<header>Geolocation</header>
+			<section class="center"><br/	>
+				<div>Wi-fi > IP > Mac Address > Bluetooth</div>
+				<div id="map" style="width:350px; height:350px; margin-left:30%"></div> 
+				<input type="button" value="determinar posicao" onclick="setPos();"/>
+			</section>
+		</div>
+		<!-- Inputs-->
+		<div class="slide inputs">
+			<header>Novos Inputs</header>
+			<section style="font-size:13px;"><br/>
+					<form>
+						<table>
+							<tr>
+								<td>Numeros</td> 
+								<td><input type="number"></td>
+							</tr>
+							<tr>
+								<td>Date Time</td> 
+								<td><input type="datetime"/></td>
+							</tr>
+							<tr>
+							<td>Date</td> <td><input type="datetime"/></td>
+							</tr>
+							<tr>
+							<td>Date Time Local</td> <td><input type="datetime-local" /></td>
+							</tr>
+							<tr>
+							<td>Mes</td> <td><input type="month" /></td>
+							</tr>
+							<tr>
+							<td>Semana</td> <td><input type="week" /></td>
+							</tr>
+							<tr>
+							<td>Range</td> <td><input type="range" /></td>
+							</tr>
+							<tr>
+							<td>URL</td> <td><input type="url" /></td>
+							</tr>
+							<tr>
+							<td><input type="submit" value="enviar" /></td>
+							</tr>
+						</table>
+					</form>
+				<hr/>
+				<form>
+					<h2>FORMULARIO</h2>
+					<table>
+						<tr>
+							<td>Campo 1</td> <td><input type="text"></td>
+						</tr>
+						<tr>
+							<td>Campo 2</td> <td><input type="text"></td>
+						</tr>
+						<tr>
+							<td><input type="reset" /></td>
+						</tr>
+					</table>
+				</form>
+
+			</section>
+		</div>
+		<!-- Canvas-->
+		<div class="slide">
+			<header>Canvas</header>
+			<section class="center"><br/	>
+				<canvas id="canvas" width="1200" height="600">
+		       <p>Este broser não suporta o elemento canvas</p>
+		    </canvas>
+				</section>
+		</div>
+		<!-- Canvas 2-->
+		<div class="slide">
+			<header>Canvas2</header>
+			<section >
+				 	<canvas id="outro_canvas" width="1200" height="400">
+		         <p>Este broser não suporta o elemento canvas</p>
+		      </canvas>
+
+			 		<button onclick="currentFunction=alpha;">Change Alpha</button>
+			 		<button onclick="currentFunction=shear;">Shear</button>
+			 		<button onclick="currentFunction=scale;">Scale</button>
+			 		<button onclick="currentFunction=rotate;">Rotate</button>
+			</section>
+		</div>
+ 
+  </div>
+
+<script>
+      (function() {
+        // Since we don't have the fallback of attachEvent and
+        // other IE only stuff we won't try to run JS for IE.
+        // It will run though when using Google Chrome Frame
+        if (document.all) { return; }
+
+        var currentSlideNo;
+        var notesOn = false;
+        var slides = document.getElementsByClassName('slide');
+        var touchStartX = 0;     
+   
+        // var slide_hash = window.location.hash.replace(/#/, '');
+        // if (slide_hash) {
+        //   for (var i = 0, len = slides.length; i < len; i++) {
+        //     if (slides[i].id == slide_hash) {
+        //       currentSlideNo = i;
+        //       updateSlideClasses(); 
+        //     }
+        //   }
+        // }
+        
+        var spaces = /\s+/, a1 = [""];
+
+        var str2array = function(s) {
+          if (typeof s == "string" || s instanceof String) {
+            if (s.indexOf(" ") < 0) {
+              a1[0] = s;
+              return a1;
+            } else {
+              return s.split(spaces);
+            }
+          }
+          return s;
+        };
+
+        var trim = function(str) {
+          return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+        };
+
+        var addClass = function(node, classStr) {
+          classStr = str2array(classStr);
+          var cls = " " + node.className + " ";
+          for (var i = 0, len = classStr.length, c; i < len; ++i) {
+            c = classStr[i];
+            if (c && cls.indexOf(" " + c + " ") < 0) {
+              cls += c + " ";
+            }
+          }
+          node.className = trim(cls);
+        };
+
+        var removeClass = function(node, classStr) {
+          var cls;
+          if (classStr !== undefined) {
+            classStr = str2array(classStr);
+            cls = " " + node.className + " ";
+            for (var i = 0, len = classStr.length; i < len; ++i) {
+              cls = cls.replace(" " + classStr[i] + " ", " ");
+            }
+            cls = trim(cls);
+          } else {
+            cls = "";
+          }
+          if (node.className != cls) {
+            node.className = cls;
+          }
+        };
+
+        var getSlideEl = function(slideNo) {
+          if (slideNo > 0) {
+            return slides[slideNo - 1];
+          } else {
+            return null;
+          }
+        };
+
+        var getSlideTitle = function(slideNo) {
+          var el = getSlideEl(slideNo);
+          
+          if (el) {
+            return el.getElementsByTagName('header')[0].innerHTML;
+          } else {
+            return null;
+          }
+        };
+        
+        var changeSlideElClass = function(slideNo, className) {
+          var el = getSlideEl(slideNo);
+
+          if (el) {
+            removeClass(el, 'far-past past current future far-future');
+            addClass(el, className);
+          }
+        };
+        
+        var updateSlideClasses = function() {
+          window.location.hash = "slide" + currentSlideNo;
+          changeSlideElClass(currentSlideNo - 2, 'far-past');
+          changeSlideElClass(currentSlideNo - 1, 'past');
+          changeSlideElClass(currentSlideNo, 'current');
+          changeSlideElClass(currentSlideNo + 1, 'future');
+          changeSlideElClass(currentSlideNo + 2, 'far-future');                
+        };
+        
+        var nextSlide = function() {
+          if (currentSlideNo < slides.length) {
+            currentSlideNo++;
+          }
+          
+          updateSlideClasses();
+        };
+        
+        var prevSlide = function() {
+          if (currentSlideNo > 1) {
+            currentSlideNo--;
+          }
+          updateSlideClasses();
+        };
+        
+        var showNotes = function() {
+          var notes = document.querySelectorAll('.notes');
+          for (var i = 0, len = notes.length; i < len; i++) {
+            notes[i].style.display = (notesOn) ? 'none':'block';
+          }
+          notesOn = (notesOn) ? false:true;
+        };
+
+        var switch3D = function() {
+          if (document.body.className.indexOf('three-d') == -1) {
+            document.getElementsByClassName('presentation')[0].style.webkitPerspective = '1000px';
+            document.body.className += ' three-d';
+          } else {
+            window.setTimeout("document.getElementsByClassName('presentation')[0].style.webkitPerspective = '0';", 2000);
+            document.body.className = document.body.className.replace(/three-d/, '');
+          }
+        };
+
+        var handleBodyKeyDown = function(event) {
+          //console.log(event.keyCode);
+          switch (event.keyCode) {
+            case 38: // left arrow
+              prevSlide();
+              break;
+            case 40: // right arrow
+            // case 32: // space
+              nextSlide();
+              break;
+            case 50: // 2
+              showNotes();          
+              break;
+            case 51: // 3
+              break;
+          }
+        };
+
+        var addTouchListeners = function() {
+          document.addEventListener('touchstart', function(e) {
+            touchStartX = e.touches[0].pageX;
+          }, false);
+          document.addEventListener('touchend', function(e) {
+            var pixelsMoved = touchStartX - e.changedTouches[0].pageX;
+            var SWIPE_SIZE = 150;
+            if (pixelsMoved > SWIPE_SIZE) {
+              nextSlide();
+            }
+            else if (pixelsMoved < -SWIPE_SIZE) {
+             prevSlide();
+            }
+          }, false);
+        };
+
+        // initialize
+
+        (function() {
+          if (window.location.hash != "") {
+            currentSlideNo = Number(window.location.hash.replace('#slide', ''));
+          } else {
+            currentSlideNo = 1;
+          }
+   
+          document.addEventListener('keydown', handleBodyKeyDown, false);
+   
+          var els = slides;
+          for (var i = 0, el; el = els[i]; i++) {
+            addClass(el, 'slide far-future');
+          }
+          updateSlideClasses(); 
+
+          // add support for finger events (filter it by property detection?)
+          addTouchListeners();
+        })();
+      })();
+
+    </script>      
+  </body>
+</html>

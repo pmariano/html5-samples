@@ -1,0 +1,39 @@
+<script type="text/javascript" src="javascript/jquery.js"></script>
+
+
+<html >
+	<head>
+<script src="http://www.google.com/jsapi?key=ABQIAAAAciAr-YcJOX4sVbBQF5yFOBRI2zyDwyJhdEdO9xa_t4eLz9AjchSe2DA_dgZ-3Akmxq1pd4ElyBEStA"></script>		
+		<script type="text/javascript">
+			google.load("maps", "2");
+			$(document).ready(function(){
+				google.setOnLoadCallback(initialize);
+			}); 
+
+			function initialize() {
+				var map = new google.maps.Map2(document.getElementById("map"));
+				map.setCenter(new google.maps.LatLng(37.4419, -122.1419), 13);
+			}
+
+			function setPos(){
+				var map = new google.maps.Map2(document.getElementById("map"));
+
+			navigator.geolocation.getCurrentPosition(function(position) {
+				var lat = position.coords.latitude;
+				var lng = position.coords.longitude;
+				map.setCenter(new GLatLng(lat, lng), 13);
+				map.addOverlay(new GMarker(new GLatLng(lat, lng)));    
+			});
+		}
+		
+		
+		</script>
+		<title>Geolocation Test</title>
+	</head>
+	<body>
+		<br/>
+		
+		<div id="map" style="width:400px; height:400px"></div> 
+		<input type="button" value="determinar posicao" onclick="setPos();"/>
+	</body>
+</html>
