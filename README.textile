@@ -1,6 +1,6 @@
 h1. HTML 5 SAMPLES
 
-h2. Topics
+h2. Tópicos Abordados
 
  Abaixo estão listados os topicos abordados por essa apresentação
 
