@@ -1,6 +1,7 @@
 h1. HTML 5 SAMPLES
 
 h2. Topics
+
  Abaixo estão listados os topicos abordados por essa apresentação
 
 * Motivação
@@ -15,5 +16,6 @@ h2. Topics
 OBS: Alguns exemplos possuem particularidades portanto teste em diferentes browsers caso não funcione.
 
 h2. Ajustando a apresentação
+
 A apresentação contém exemplos de áudio e vídeo, se você deseja testar isso você deve incluir seus videos no folder video/audio e então mudar o arquivo slides.html para que o mesmo aponte para os videos correspondentes.
 
